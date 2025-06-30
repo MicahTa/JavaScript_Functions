@@ -24,7 +24,11 @@ function checkAge(userName, age) {
 }
 
 function quadrantFinder (x, y) {
-    if (x > 0) {
+    // Added origin support
+    if (x == 0 && y == 0) {
+        console.log(`Point (${x}, ${y}) is on the origin`)
+    }
+    else if (x > 0) {
         if (y > 0) {
             console.log(`Point (${x}, ${y}) is in the 1st quadrant`)
         } else {
@@ -46,7 +50,7 @@ function triangleType (s1, s2, s3) {
     let z = org[2]
     if (x+y <= z) {
         console.log("Invalid Triangle");
-    }  else if (x == y && y == z) {
+    } else if (x == z) {
         console.log("Equilateral Triangle");
     } else if (x==y || z==y) {
         console.log("Isosceles Triangle");
