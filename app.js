@@ -58,3 +58,21 @@ function triangleType (s1, s2, s3) {
         console.log("Scalene Triangle");
     }
 }
+
+
+function dataPlan (planLimit, day, usage) {
+    console.log(`
+        ${day} days used, ${30-day} days remaining
+        Average daily use: ${usage/day} GB/day
+        `);
+        if ((usage*30)/day > planLimit) {
+        console.log(`
+            You are EXCEEDING your average daily use (${planLimit/30} GB/day),
+            continuing this high usage, you'll exceed your data plan by
+            ${((usage*30)/day)-planLimit} GB.
+            To stay below your data plan, use no more than ${(planLimit-usage)/(30-day)} GB/day.
+        `);
+        } else {
+            console.log("You are on track to meet or be under your limit");
+        }
+}
