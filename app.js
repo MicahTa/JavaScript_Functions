@@ -28,9 +28,9 @@ function quadrantFinder (x, y) {
     if (x === 0 && y === 0) {
         console.log(`Point (${x}, ${y}) is on the origin`)
     } else if (x === 0) {
-        console.log(`Point (${x}, ${y}) is on the x axis`)
-    } else if (y === 0) {
         console.log(`Point (${x}, ${y}) is on the y axis`)
+    } else if (y === 0) {
+        console.log(`Point (${x}, ${y}) is on the x axis`)
     } else if (x > 0) {
         if (y > 0) {
             console.log(`Point (${x}, ${y}) is in the 1st quadrant`)
@@ -64,6 +64,11 @@ function triangleType (s1, s2, s3) {
 
 
 function dataPlan (planLimit, day, usage) {
+    // Avoid all devide by 0 errors
+    if (day === 0) {
+        day = 1;
+    }
+
     console.log(`
         ${day} days used, ${30-day} days remaining
         Average daily use: ${usage/day} GB/day
